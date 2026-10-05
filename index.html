@@ -1,0 +1,1031 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>國風古箏打卡 - 琴韻心香</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts for Classical Calligraphy & Serif -->
+    <link href="https://fonts.googleapis.com/css2?family=Ma+Shan+Zheng&family=Noto+Serif+TC:wght@400;600;700;900&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'xuan-bg': '#F7F4EA',
+                        'xuan-card': '#FFFDF8',
+                        'cinnabar': '#C0392B',
+                        'cinnabar-dark': '#962D22',
+                        'jade': '#1E5631',
+                        'jade-light': '#E8F5E9',
+                        'bronze-gold': '#D4AF37',
+                        'bronze-dark': '#9A7B1C',
+                        'ink-black': '#2C2C2C',
+                        'ink-light': '#595959',
+                    },
+                    fontFamily: {
+                        'calligraphy': ['"Ma Shan Zheng"', '"Noto Serif TC"', 'serif'],
+                        'serif-tc': ['"Noto Serif TC"', 'PMingLiU', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            font-family: 'Noto Serif TC', serif;
+            background-color: #F7F4EA;
+            background-image: radial-gradient(#E8E2D0 1px, transparent 0);
+            background-size: 24px 24px;
+            color: #2C2C2C;
+            min-height: 100vh;
+        }
+
+        .font-calligraphy {
+            font-family: 'Ma Shan Zheng', cursive, 'Noto Serif TC', serif;
+        }
+
+        /* Chinese Seal Stamp Styling */
+        .seal-stamp {
+            border: 3px solid #C0392B;
+            color: #C0392B;
+            font-family: 'Ma Shan Zheng', 'Noto Serif TC', serif;
+            padding: 2px 6px;
+            border-radius: 6px;
+            display: inline-block;
+            transform: rotate(-5deg);
+            box-shadow: inset 0 0 2px rgba(192, 57, 43, 0.4);
+            letter-spacing: 2px;
+            background: rgba(255, 253, 248, 0.85);
+        }
+
+        /* Classical Scroll Styling */
+        .scroll-container {
+            background: #FFFDF8;
+            border-top: 8px solid #8D5B4C;
+            border-bottom: 8px solid #8D5B4C;
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.05);
+            position: relative;
+        }
+        .scroll-container::before, .scroll-container::after {
+            content: '';
+            position: absolute;
+            top: -12px;
+            width: 16px;
+            height: calc(100% + 24px);
+            background: #5C3A21;
+            border-radius: 4px;
+            box-shadow: 2px 0 5px rgba(0,0,0,0.3);
+        }
+        .scroll-container::before { left: -10px; }
+        .scroll-container::after { right: -10px; }
+
+        /* Floating bamboo & petal animation */
+        @keyframes floatPetal {
+            0% { transform: translateY(0px) rotate(0deg); opacity: 0.8; }
+            50% { transform: translateY(-12px) rotate(6deg); opacity: 1; }
+            100% { transform: translateY(0px) rotate(0deg); opacity: 0.8; }
+        }
+        .animate-petal {
+            animation: floatPetal 4s ease-in-out infinite;
+        }
+
+        /* Gold glow animation */
+        @keyframes goldGlow {
+            0%, 100% { box-shadow: 0 0 10px rgba(212, 175, 55, 0.3); }
+            50% { box-shadow: 0 0 22px rgba(212, 175, 55, 0.7); }
+        }
+        .glow-gold {
+            animation: goldGlow 2.5s infinite;
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #F7F4EA; }
+        ::-webkit-scrollbar-thumb { background: #D4AF37; border-radius: 4px; }
+    </style>
+</head>
+<body class="pb-16 select-none overflow-x-hidden">
+
+    <div class="fixed inset-0 pointer-events-none opacity-25 overflow-hidden z-0">
+        <div class="absolute top-12 left-10 text-3xl text-cinnabar animate-petal">🌸</div>
+        <div class="absolute top-1/3 right-8 text-4xl text-jade animate-petal" style="animation-delay: 1.2s;">🍃</div>
+        <div class="absolute bottom-24 left-16 text-3xl text-bronze-gold animate-petal" style="animation-delay: 2.1s;">✨</div>
+        <div class="absolute bottom-1/3 right-16 text-3xl text-cinnabar animate-petal" style="animation-delay: 0.7s;">🌺</div>
+    </div>
+
+    <header class="relative z-10 max-w-4xl mx-auto pt-6 px-4">
+        <div class="bg-xuan-card/90 backdrop-blur-md rounded-2xl p-4 shadow-md border-2 border-bronze-gold/40 flex flex-wrap items-center justify-between gap-3">
+            <div class="flex items-center gap-3">
+                <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-cinnabar to-cinnabar-dark flex items-center justify-center text-white text-2xl shadow-md border border-bronze-gold/50">
+                    琴
+                </div>
+                <div>
+                    <h1 class="text-2xl font-bold font-calligraphy text-cinnabar flex items-center gap-2">
+                        國風古箏打卡
+                        <span class="text-xs font-serif-tc bg-cinnabar/10 text-cinnabar border border-cinnabar/30 px-2.5 py-0.5 rounded-full">琴韻心香</span>
+                    </h1>
+                    <p class="text-xs text-ink-light font-serif-tc">日日撫琴 ‧ 五日呈卷解鎖錦囊大賞 🎵</p>
+                </div>
+            </div>
+
+            <div class="flex items-center gap-2 ml-auto">
+                <div id="syncStatus" class="hidden md:flex items-center gap-1.5 text-xs bg-jade-light text-jade px-3 py-1.5 rounded-full border border-jade/30">
+                    <span class="w-2 h-2 rounded-full bg-jade animate-pulse"></span>
+                    <span id="syncText">雲端圖卷連線</span>
+                </div>
+
+                <button id="toggleParentBtn" class="bg-gradient-to-r from-ink-black to-slate-800 hover:from-slate-800 hover:to-black text-bronze-gold font-serif-tc text-xs md:text-sm px-4 py-2 rounded-xl border border-bronze-gold/50 shadow transition-all transform active:scale-95 flex items-center gap-2">
+                    <i class="fa-solid fa-user-shield"></i>
+                    <span id="parentBtnText">家長掌案</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main class="relative z-10 max-w-4xl mx-auto px-4 mt-6">
+        
+        <!-- KID VIEW PORTAL -->
+        <div id="kidView" class="space-y-6">
+
+            <!-- 5-Day Scroll Progress & Reward Section -->
+            <section class="scroll-container rounded-lg p-6 my-2 border-x-4 border-bronze-gold">
+                <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-4 pb-3 border-b border-bronze-gold/30">
+                    <div>
+                        <div class="inline-flex items-center gap-1.5 bg-cinnabar/10 text-cinnabar px-3 py-1 rounded-full text-xs font-bold mb-1 border border-cinnabar/20">
+                            <i class="fa-solid fa-fire text-cinnabar"></i>
+                            本輪連打目標：連續 5 天
+                        </div>
+                        <h2 class="text-2xl font-bold font-calligraphy text-ink-black flex items-center gap-2">
+                            已連續練琴 <span id="currentStreakText" class="text-3xl text-cinnabar font-extrabold">0</span> 天
+                            <span class="seal-stamp text-xs">勤練</span>
+                        </h2>
+                    </div>
+
+                    <!-- 5-Day Reward Box -->
+                    <div class="bg-xuan-bg rounded-xl p-3 border border-bronze-gold/60 shadow-inner flex items-center gap-3">
+                        <div class="w-11 h-11 rounded-lg bg-bronze-gold/20 flex items-center justify-center text-2xl text-bronze-dark border border-bronze-gold/40">
+                            🎁
+                        </div>
+                        <div>
+                            <div class="text-[11px] text-bronze-dark font-bold">滿 5 天解鎖錦囊大賞：</div>
+                            <div id="rewardTitleText" class="text-sm font-bold text-cinnabar">
+                                精美古風飾品 + 冰淇淋大拼盤！
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 5-Day Classical Progress Nodes -->
+                <div class="grid grid-cols-5 gap-2 md:gap-3 my-4">
+                    <div id="streakDaysContainer" class="contents">
+                        <!-- Dynamic Day 1 to Day 5 cards injected via JS -->
+                    </div>
+                </div>
+
+                <div class="text-center mt-3">
+                    <p id="streakHintText" class="text-xs text-ink-light">
+                        再堅持 <span id="daysLeftText" class="text-cinnabar font-bold text-sm">5</span> 天即可開啟賞賜錦囊！持之以恆，必有所成！✨
+                    </p>
+                </div>
+            </section>
+
+            <!-- Today's Submission Form -->
+            <section class="bg-xuan-card rounded-2xl p-6 shadow-md border-2 border-bronze-gold/40">
+                <div class="flex items-center justify-between mb-4 border-b border-bronze-gold/20 pb-3">
+                    <h3 class="text-xl font-bold font-calligraphy text-cinnabar flex items-center gap-2">
+                        <i class="fa-solid fa-scroll text-bronze-gold"></i>
+                        呈交今日練琴圖卷
+                    </h3>
+                    <span id="todayDateBadge" class="text-xs bg-xuan-bg text-ink-black px-3 py-1 rounded-full border border-bronze-gold/30 font-serif-tc">
+                        2026-10-05 (一)
+                    </span>
+                </div>
+
+                <!-- Already Checked In Today Banner -->
+                <div id="alreadyCheckedInBanner" class="hidden bg-jade-light border-2 border-jade/40 rounded-xl p-5 text-center my-2">
+                    <div class="w-14 h-14 bg-jade text-white rounded-full flex items-center justify-center text-2xl mx-auto mb-2 shadow-inner animate-bounce">
+                        印
+                    </div>
+                    <h4 class="text-lg font-bold text-jade font-calligraphy">今日已成功蓋章呈交！</h4>
+                    <p class="text-xs text-jade/80 mt-1">琴音繚繞，今日練習已記錄於琴韻日誌中。</p>
+                    <div id="todayPhotoPreviewSmall" class="mt-4 inline-block rounded-lg overflow-hidden shadow border-2 border-jade/30 max-w-xs">
+                        <!-- Photo preview if checked in -->
+                    </div>
+                </div>
+
+                <!-- Submission Form -->
+                <form id="checkInForm" class="space-y-5">
+                    
+                    <!-- Photo Upload Dropzone -->
+                    <div>
+                        <label class="block text-xs font-bold text-ink-black mb-2">
+                            📸 附上今日練琴證明圖卷 <span class="text-cinnabar">*</span>
+                        </label>
+
+                        <div id="uploadDropzone" class="border-2 border-dashed border-bronze-gold/60 bg-[#FFFDF7] hover:bg-xuan-bg rounded-xl p-4 text-center cursor-pointer transition-all relative overflow-hidden group shadow-inner">
+                            <input type="file" id="photoInput" accept="image/*" capture="environment" class="hidden">
+                            
+                            <div id="uploadPlaceholder" class="py-4">
+                                <div class="w-12 h-12 bg-xuan-bg text-bronze-dark rounded-xl flex items-center justify-center text-2xl mx-auto mb-2 border border-bronze-gold/40 group-hover:scale-105 transition-transform">
+                                    <i class="fa-solid fa-camera"></i>
+                                </div>
+                                <p class="text-sm font-bold text-cinnabar font-serif-tc">點擊此處拍攝或上傳練琴照片</p>
+                                <p class="text-xs text-ink-light mt-1">請拍攝清晰坐姿與撫琴姿勢</p>
+                            </div>
+
+                            <div id="photoPreviewContainer" class="hidden relative inline-block max-h-64 rounded-lg overflow-hidden shadow-md border-2 border-bronze-gold">
+                                <img id="photoPreviewImg" src="" alt="練琴照片預覽" class="max-h-64 object-contain mx-auto">
+                                <button type="button" id="removePhotoBtn" class="absolute top-2 right-2 bg-cinnabar hover:bg-cinnabar-dark text-white w-7 h-7 rounded-full shadow flex items-center justify-center text-xs">
+                                    <i class="fa-solid fa-xmark"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Practice Duration & Classical Tags Grid -->
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        
+                        <!-- Duration Selector -->
+                        <div>
+                            <label class="block text-xs font-bold text-ink-black mb-2">
+                                ⏱️ 今日撫琴時長：
+                            </label>
+                            <div class="grid grid-cols-4 gap-2">
+                                <button type="button" class="duration-btn bg-xuan-bg hover:bg-bronze-gold/20 border border-bronze-gold/40 text-ink-black font-bold py-2 rounded-lg text-xs transition-all active" data-value="30分鐘">
+                                    30 分鐘
+                                </button>
+                                <button type="button" class="duration-btn bg-xuan-bg hover:bg-bronze-gold/20 border border-bronze-gold/40 text-ink-black font-bold py-2 rounded-lg text-xs transition-all" data-value="45分鐘">
+                                    45 分鐘
+                                </button>
+                                <button type="button" class="duration-btn bg-xuan-bg hover:bg-bronze-gold/20 border border-bronze-gold/40 text-ink-black font-bold py-2 rounded-lg text-xs transition-all" data-value="60分鐘">
+                                    60 分鐘
+                                </button>
+                                <button type="button" class="duration-btn bg-xuan-bg hover:bg-bronze-gold/20 border border-bronze-gold/40 text-ink-black font-bold py-2 rounded-lg text-xs transition-all" data-value="90分鐘+">
+                                    90分鐘+
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Classical Mood Tags -->
+                        <div>
+                            <label class="block text-xs font-bold text-ink-black mb-2">
+                                📜 今日練習心得雅稱：
+                            </label>
+                            <div class="grid grid-cols-3 gap-2">
+                                <button type="button" class="mood-btn bg-xuan-bg hover:bg-cinnabar/10 border border-bronze-gold/40 text-ink-black font-serif-tc text-xs py-2 rounded-lg transition-all active" data-value="漸入佳境">
+                                    漸入佳境
+                                </button>
+                                <button type="button" class="mood-btn bg-xuan-bg hover:bg-cinnabar/10 border border-bronze-gold/40 text-ink-black font-serif-tc text-xs py-2 rounded-lg transition-all" data-value="餘音繞梁">
+                                    餘音繞梁
+                                </button>
+                                <button type="button" class="mood-btn bg-xuan-bg hover:bg-cinnabar/10 border border-bronze-gold/40 text-ink-black font-serif-tc text-xs py-2 rounded-lg transition-all" data-value="手熟指暢">
+                                    手熟指暢
+                                </button>
+                                <button type="button" class="mood-btn bg-xuan-bg hover:bg-cinnabar/10 border border-bronze-gold/40 text-ink-black font-serif-tc text-xs py-2 rounded-lg transition-all" data-value="琴心相通">
+                                    琴心相通
+                                </button>
+                                <button type="button" class="mood-btn bg-xuan-bg hover:bg-cinnabar/10 border border-bronze-gold/40 text-ink-black font-serif-tc text-xs py-2 rounded-lg transition-all col-span-2" data-value="心曠神怡">
+                                    心曠神怡
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Notes Input -->
+                    <div>
+                        <label for="practiceNotes" class="block text-xs font-bold text-ink-black mb-1">
+                            ✍️ 練習曲目或隨筆（選填）：
+                        </label>
+                        <input type="text" id="practiceNotes" placeholder="如：練習《高山流水》段落、指法順暢..." class="w-full bg-xuan-bg border border-bronze-gold/40 rounded-xl px-3 py-2 text-xs focus:ring-2 focus:ring-cinnabar focus:outline-none">
+                    </div>
+
+                    <!-- Submit Button -->
+                    <button type="submit" id="submitCheckInBtn" class="w-full bg-gradient-to-r from-cinnabar via-cinnabar-dark to-bronze-dark hover:from-cinnabar-dark hover:to-cinnabar text-white font-calligraphy text-xl py-3 rounded-xl shadow-lg border border-bronze-gold/50 glow-gold transition-all transform active:scale-98 flex items-center justify-center gap-2">
+                        <i class="fa-solid fa-stamp"></i>
+                        <span>呈交今日練琴圖卷（蓋章）</span>
+                    </button>
+                </form>
+            </section>
+
+            <!-- Practice Journal Gallery -->
+            <section class="bg-xuan-card rounded-2xl p-6 shadow-md border-2 border-bronze-gold/40">
+                <div class="flex items-center justify-between mb-4 border-b border-bronze-gold/20 pb-3">
+                    <h3 class="text-xl font-bold font-calligraphy text-ink-black flex items-center gap-2">
+                        <i class="fa-solid fa-book-bookmark text-cinnabar"></i>
+                        琴韻日誌（打卡歷程）
+                    </h3>
+                    <span id="totalLogCount" class="text-xs bg-xuan-bg text-bronze-dark px-3 py-1 rounded-full border border-bronze-gold/30 font-bold">
+                        共 0 卷
+                    </span>
+                </div>
+
+                <div id="historyGrid" class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3">
+                    <div class="col-span-full text-center py-8 text-ink-light text-xs">
+                        尚無練琴圖卷，今日完成練習後即可上傳首張圖卷！📜
+                    </div>
+                </div>
+            </section>
+
+        </div>
+
+        <!-- PARENT DASHBOARD PORTAL -->
+        <div id="parentView" class="hidden space-y-6">
+
+            <div class="bg-gradient-to-r from-ink-black via-slate-800 to-ink-black rounded-2xl p-6 text-white shadow-xl border-2 border-bronze-gold/50 flex items-center justify-between">
+                <div>
+                    <h2 class="text-2xl font-bold font-calligraphy text-bronze-gold flex items-center gap-2">
+                        <i class="fa-solid fa-stamp"></i> 家長掌案後台
+                    </h2>
+                    <p class="text-xs text-slate-300 mt-1 font-serif-tc">設定 5 天賞賜錦囊、審核練琴照片與手動調整連打進度</p>
+                </div>
+                <button id="exitParentBtn" class="bg-bronze-gold/20 hover:bg-bronze-gold/40 text-bronze-gold border border-bronze-gold/50 text-xs px-3 py-1.5 rounded-xl transition-all">
+                    返回琴童視角
+                </button>
+            </div>
+
+            <!-- Settings & Manual Controls -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                
+                <!-- Customize 5-Day Reward -->
+                <div class="bg-xuan-card rounded-2xl p-6 shadow-md border-2 border-bronze-gold/40">
+                    <h3 class="text-md font-bold text-cinnabar mb-2 flex items-center gap-2">
+                        <i class="fa-solid fa-gift"></i>
+                        設定本輪「連續 5 天」獎勵內容
+                    </h3>
+                    <p class="text-xs text-ink-light mb-4">
+                        當小孩連續打卡滿 5 天時，網頁將自動彈出卷軸慶祝並顯示此獎勵！
+                    </p>
+                    <div class="space-y-3">
+                        <input type="text" id="parentRewardInput" value="精美古風飾品 + 冰淇淋大拼盤！" placeholder="請輸入獎勵內容..." class="w-full bg-xuan-bg border border-bronze-gold/40 rounded-xl px-3 py-2 text-sm focus:ring-2 focus:ring-cinnabar focus:outline-none">
+                        
+                        <button id="saveRewardBtn" class="w-full bg-cinnabar hover:bg-cinnabar-dark text-white font-bold text-xs py-2.5 rounded-xl shadow transition-all border border-bronze-gold/30">
+                            保存 5 天獎勵設定
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Manual Streak Control -->
+                <div class="bg-xuan-card rounded-2xl p-6 shadow-md border-2 border-bronze-gold/40">
+                    <h3 class="text-md font-bold text-jade mb-2 flex items-center gap-2">
+                        <i class="fa-solid fa-sliders"></i>
+                        手動調整連續天數 (Streak)
+                    </h3>
+                    <p class="text-xs text-ink-light mb-4">
+                        若遇特殊請假或補練，可直接增加或修正天數。
+                    </p>
+                    <div class="flex items-center gap-3">
+                        <button id="decreaseStreakBtn" class="w-10 h-10 rounded-xl bg-xuan-bg hover:bg-bronze-gold/20 border border-bronze-gold/40 text-ink-black font-bold text-lg flex items-center justify-center">
+                            -
+                        </button>
+                        <div class="flex-1 text-center bg-xuan-bg border border-bronze-gold/40 py-2 rounded-xl">
+                            <span class="text-xs text-ink-light block">目前連續天數</span>
+                            <span id="parentStreakDisplay" class="text-xl font-bold text-cinnabar">0</span> 天
+                        </div>
+                        <button id="increaseStreakBtn" class="w-10 h-10 rounded-xl bg-xuan-bg hover:bg-bronze-gold/20 border border-bronze-gold/40 text-ink-black font-bold text-lg flex items-center justify-center">
+                            +
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Parent Audit List -->
+            <div class="bg-xuan-card rounded-2xl p-6 shadow-md border-2 border-bronze-gold/40">
+                <h3 class="text-md font-bold text-ink-black mb-3 flex items-center gap-2">
+                    <i class="fa-solid fa-list-check text-bronze-dark"></i>
+                    所有練琴照片與打卡紀錄審核
+                </h3>
+                <div id="parentAuditList" class="space-y-3">
+                    <!-- Dynamic audit list items -->
+                </div>
+            </div>
+
+        </div>
+
+    </main>
+
+    <!-- PIN Modal (Cleaned up: No hints shown) -->
+    <div id="pinModal" class="fixed inset-0 bg-black/60 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
+        <div class="bg-xuan-card rounded-2xl p-6 max-w-sm w-full shadow-2xl text-center border-2 border-bronze-gold">
+            <div class="w-12 h-12 bg-cinnabar/10 text-cinnabar rounded-full flex items-center justify-center text-xl mx-auto mb-3 border border-cinnabar/30">
+                <i class="fa-solid fa-lock"></i>
+            </div>
+            <h3 class="text-lg font-bold text-ink-black font-calligraphy">家長掌案驗證</h3>
+            <p class="text-xs text-ink-light mt-1 mb-4">請輸入家長專用驗證碼</p>
+            
+            <input type="password" id="pinInput" maxlength="4" placeholder="請輸入 4 位數驗證碼" class="w-full text-center text-2xl tracking-widest font-mono bg-xuan-bg border border-bronze-gold/50 rounded-xl py-2 mb-4 focus:ring-2 focus:ring-cinnabar focus:outline-none">
+            
+            <div class="flex gap-2">
+                <button id="closePinBtn" class="flex-1 bg-xuan-bg hover:bg-slate-200 text-ink-black text-xs py-2.5 rounded-xl font-bold border border-bronze-gold/30">
+                    取消
+                </button>
+                <button id="submitPinBtn" class="flex-1 bg-cinnabar hover:bg-cinnabar-dark text-white text-xs py-2.5 rounded-xl font-bold shadow">
+                    進入掌案
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Celebration Unfold Scroll Modal -->
+    <div id="celebrationModal" class="fixed inset-0 bg-black/80 backdrop-blur-md z-50 hidden flex items-center justify-center p-4">
+        <canvas id="fireworksCanvas" class="absolute inset-0 pointer-events-none"></canvas>
+        
+        <div class="relative z-10 scroll-container rounded-xl p-8 max-w-md w-full text-center border-4 border-bronze-gold shadow-2xl animate-petal">
+            <div class="seal-stamp text-lg mb-2">賀 ‧ 佳作</div>
+            <h3 class="text-3xl font-bold font-calligraphy text-cinnabar">恭喜達成連續 5 天撫琴！</h3>
+            <p class="text-xs text-ink-light mt-2 font-serif-tc">小琴童勤奮不懈，古箏指法與琴藝大有精進！</p>
+            
+            <div class="my-6 bg-xuan-bg border-2 border-bronze-gold/60 rounded-xl p-4 shadow-inner">
+                <div class="text-xs font-bold text-bronze-dark mb-1 font-calligraphy text-base">✨ 獲得錦囊大賞 ✨</div>
+                <div id="celebrationRewardText" class="text-lg font-black text-cinnabar font-serif-tc">
+                    精美古風飾品 + 冰淇淋大拼盤！
+                </div>
+            </div>
+
+            <button id="closeCelebrationBtn" class="w-full bg-gradient-to-r from-cinnabar via-cinnabar-dark to-bronze-dark hover:from-cinnabar-dark hover:to-cinnabar text-white font-calligraphy text-lg py-3 rounded-xl shadow-lg border border-bronze-gold">
+                領取賞賜 🧧
+            </button>
+        </div>
+    </div>
+
+    <!-- Fullscreen Image Modal -->
+    <div id="photoModal" class="fixed inset-0 bg-black/85 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
+        <div class="relative max-w-2xl w-full">
+            <button id="closePhotoModalBtn" class="absolute -top-10 right-0 text-white text-2xl hover:text-bronze-gold">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+            <img id="fullModalImg" src="" alt="打卡大圖" class="w-full max-h-[80vh] object-contain rounded-xl shadow-2xl border-2 border-bronze-gold">
+            <div id="modalPhotoCaption" class="text-center text-white text-xs mt-3 bg-black/60 p-2 rounded-xl backdrop-blur"></div>
+        </div>
+    </div>
+
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-app.js";
+        import { getAuth, signInAnonymously, signInWithCustomToken } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-auth.js";
+        import { getFirestore, collection, doc, setDoc, onSnapshot } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-firestore.js";
+
+        // Global state and appId definition
+        const appId = typeof __app_id !== 'undefined' ? __app_id : 'guzheng-classical-5day';
+        let db = null;
+        let auth = null;
+
+        let appState = {
+            streak: 0,
+            rewardText: "精美古風飾品 + 冰淇淋大拼盤！",
+            lastCheckInDate: null,
+            logs: []
+        };
+
+        let selectedDuration = "30分鐘";
+        let selectedMood = "漸入佳境";
+        let currentUploadedBase64 = null;
+
+        async function initFirebase() {
+            try {
+                if (typeof __firebase_config !== 'undefined' && __firebase_config) {
+                    const firebaseConfig = JSON.parse(__firebase_config);
+                    const app = initializeApp(firebaseConfig);
+                    auth = getAuth(app);
+                    db = getFirestore(app);
+
+                    if (typeof __initial_auth_token !== 'undefined' && __initial_auth_token) {
+                        await signInWithCustomToken(auth, __initial_auth_token);
+                    } else {
+                        await signInAnonymously(auth);
+                    }
+                    
+                    document.getElementById('syncStatus').classList.remove('hidden');
+                    setupFirestoreListeners();
+                } else {
+                    loadFromLocalStorage();
+                }
+            } catch (err) {
+                console.warn("Firebase fallback to LocalStorage:", err);
+                loadFromLocalStorage();
+            }
+        }
+
+        // Firestore Paths (Strict adherence to Mandatory Rules)
+        function getSettingsDocRef() {
+            return doc(db, 'artifacts', appId, 'public', 'data', 'app_config', 'settings');
+        }
+
+        function getLogsDocRef(logId) {
+            return doc(db, 'artifacts', appId, 'public', 'data', 'practice_logs', logId);
+        }
+
+        function getLogsCollectionRef() {
+            return collection(db, 'artifacts', appId, 'public', 'data', 'practice_logs');
+        }
+
+        function setupFirestoreListeners() {
+            if (!db) return;
+
+            // Sync settings
+            onSnapshot(getSettingsDocRef(), (snapshot) => {
+                if (snapshot.exists()) {
+                    const data = snapshot.data();
+                    appState.streak = data.streak ?? 0;
+                    appState.rewardText = data.rewardText || appState.rewardText;
+                    appState.lastCheckInDate = data.lastCheckInDate || null;
+                    updateUI();
+                } else {
+                    saveSettingsToFirestore();
+                }
+            }, (error) => console.error("Error listening settings:", error));
+
+            // Sync logs
+            onSnapshot(getLogsCollectionRef(), (snapshot) => {
+                const logs = [];
+                snapshot.forEach((doc) => {
+                    logs.push({ id: doc.id, ...doc.data() });
+                });
+                logs.sort((a, b) => new Date(b.timestamp || 0) - new Date(a.timestamp || 0));
+                appState.logs = logs;
+                updateUI();
+            }, (error) => console.error("Error listening logs:", error));
+        }
+
+        async function saveSettingsToFirestore() {
+            if (!db) return;
+            try {
+                await setDoc(getSettingsDocRef(), {
+                    streak: appState.streak,
+                    rewardText: appState.rewardText,
+                    lastCheckInDate: appState.lastCheckInDate,
+                    updatedAt: new Date().toISOString()
+                }, { merge: true });
+            } catch (err) {
+                console.error("Save settings error:", err);
+            }
+        }
+
+        function loadFromLocalStorage() {
+            const saved = localStorage.getItem('guzheng_classical_5day');
+            if (saved) {
+                try { appState = JSON.parse(saved); } catch(e) {}
+            }
+            updateUI();
+        }
+
+        function saveToLocalStorage() {
+            localStorage.setItem('guzheng_classical_5day', JSON.stringify(appState));
+        }
+
+        function compressAndConvertPhoto(file) {
+            return new Promise((resolve, reject) => {
+                const reader = new FileReader();
+                reader.readAsDataURL(file);
+                reader.onload = (e) => {
+                    const img = new Image();
+                    img.src = e.target.result;
+                    img.onload = () => {
+                        const canvas = document.createElement('canvas');
+                        const maxDim = 500;
+                        let width = img.width;
+                        let height = img.height;
+
+                        if (width > height) {
+                            if (width > maxDim) {
+                                height = Math.round((height * maxDim) / width);
+                                width = maxDim;
+                            }
+                        } else {
+                            if (height > maxDim) {
+                                width = Math.round((width * maxDim) / height);
+                                height = maxDim;
+                            }
+                        }
+
+                        canvas.width = width;
+                        canvas.height = height;
+                        const ctx = canvas.getContext('2d');
+                        ctx.drawImage(img, 0, 0, width, height);
+
+                        const base64Str = canvas.toDataURL('image/jpeg', 0.65);
+                        resolve(base64Str);
+                    };
+                    img.onerror = reject;
+                };
+                reader.onerror = reject;
+            });
+        }
+
+        function updateUI() {
+            document.getElementById('currentStreakText').innerText = appState.streak;
+            document.getElementById('parentStreakDisplay').innerText = appState.streak;
+            document.getElementById('rewardTitleText').innerText = appState.rewardText;
+            document.getElementById('celebrationRewardText').innerText = appState.rewardText;
+            document.getElementById('parentRewardInput').value = appState.rewardText;
+
+            // Calculate days left in current 5-day cycle
+            const currentStreakInWeek = appState.streak % 5 === 0 && appState.streak > 0 ? 5 : appState.streak % 5;
+            const daysLeft = 5 - currentStreakInWeek;
+            document.getElementById('daysLeftText').innerText = daysLeft === 0 ? 5 : daysLeft;
+
+            render5DayNodes(currentStreakInWeek);
+
+            const todayStr = getTodayDateString();
+            document.getElementById('todayDateBadge').innerText = `${todayStr} (${getTaiwanDayOfWeek()})`;
+
+            const checkedInToday = appState.lastCheckInDate === todayStr;
+            const checkInForm = document.getElementById('checkInForm');
+            const alreadyBanner = document.getElementById('alreadyCheckedInBanner');
+
+            if (checkedInToday) {
+                checkInForm.classList.add('hidden');
+                alreadyBanner.classList.remove('hidden');
+                
+                const todayLog = appState.logs.find(l => l.date === todayStr);
+                const thumbBox = document.getElementById('todayPhotoPreviewSmall');
+                if (todayLog && todayLog.photo) {
+                    thumbBox.innerHTML = `<img src="${todayLog.photo}" class="max-h-36 w-full object-cover">`;
+                } else {
+                    thumbBox.innerHTML = '';
+                }
+            } else {
+                checkInForm.classList.remove('hidden');
+                alreadyBanner.classList.add('hidden');
+            }
+
+            renderHistoryGrid();
+            renderParentAuditList();
+        }
+
+        // Render 5-Day Classical Jade Nodes
+        function render5DayNodes(completedDays) {
+            const container = document.getElementById('streakDaysContainer');
+            container.innerHTML = '';
+
+            for (let i = 1; i <= 5; i++) {
+                const isCompleted = i <= completedDays;
+                const isDay5 = i === 5;
+
+                const dayCard = document.createElement('div');
+                dayCard.className = `flex flex-col items-center justify-center p-2 rounded-xl border-2 transition-all ${
+                    isCompleted 
+                        ? 'bg-xuan-bg border-bronze-gold text-cinnabar shadow-sm scale-105' 
+                        : 'bg-xuan-bg/50 border-bronze-gold/20 text-ink-light'
+                }`;
+
+                dayCard.innerHTML = `
+                    <div class="text-[10px] font-bold mb-1 font-serif-tc">第 ${i} 天</div>
+                    <div class="text-xl md:text-2xl ${isCompleted ? 'text-cinnabar animate-bounce' : 'text-slate-300'}">
+                        ${isDay5 ? (isCompleted ? '🈴' : '🧧') : (isCompleted ? '📿' : '⚪')}
+                    </div>
+                    <div class="text-[9px] mt-1 font-bold ${isCompleted ? 'text-cinnabar' : 'text-slate-400'}">
+                        ${isCompleted ? '已蓋章' : '待點亮'}
+                    </div>
+                `;
+                container.appendChild(dayCard);
+            }
+        }
+
+        function renderHistoryGrid() {
+            const grid = document.getElementById('historyGrid');
+            document.getElementById('totalLogCount').innerText = `共 ${appState.logs.length} 卷`;
+
+            if (appState.logs.length === 0) {
+                grid.innerHTML = `<div class="col-span-full text-center py-8 text-ink-light text-xs">尚無練琴圖卷，今日完成練習後即可上傳首張圖卷！📜</div>`;
+                return;
+            }
+
+            grid.innerHTML = '';
+            appState.logs.forEach(log => {
+                const card = document.createElement('div');
+                card.className = "bg-xuan-bg border border-bronze-gold/40 rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-all cursor-pointer relative group";
+                card.onclick = () => showPhotoModal(log.photo, `${log.date} 撫琴 (${log.duration}) - 雅稱: ${log.mood}`);
+
+                card.innerHTML = `
+                    <div class="aspect-square bg-slate-100 relative overflow-hidden">
+                        ${log.photo ? `<img src="${log.photo}" class="w-full h-full object-cover group-hover:scale-105 transition-transform">` : `<div class="w-full h-full flex items-center justify-center text-slate-400 text-2xl">📸</div>`}
+                        <div class="absolute top-1 left-1 seal-stamp text-[9px] py-0 px-1">
+                            琴心
+                        </div>
+                        <div class="absolute bottom-1 right-1 bg-black/60 text-white text-[10px] px-2 py-0.5 rounded-md backdrop-blur">
+                            ${log.duration}
+                        </div>
+                    </div>
+                    <div class="p-2">
+                        <div class="flex items-center justify-between text-[11px] font-bold text-ink-black">
+                            <span>${log.date}</span>
+                            <span class="text-cinnabar font-serif-tc">${log.mood}</span>
+                        </div>
+                        ${log.notes ? `<p class="text-[10px] text-ink-light truncate mt-1">${log.notes}</p>` : ''}
+                    </div>
+                `;
+                grid.appendChild(card);
+            });
+        }
+
+        function renderParentAuditList() {
+            const list = document.getElementById('parentAuditList');
+            if (appState.logs.length === 0) {
+                list.innerHTML = `<p class="text-xs text-ink-light text-center py-4">目前尚無紀錄</p>`;
+                return;
+            }
+
+            list.innerHTML = '';
+            appState.logs.forEach((log) => {
+                const item = document.createElement('div');
+                item.className = "flex items-center justify-between bg-xuan-bg border border-bronze-gold/30 p-3 rounded-xl gap-3";
+                item.innerHTML = `
+                    <div class="flex items-center gap-3">
+                        ${log.photo ? `<img src="${log.photo}" class="w-12 h-12 rounded-lg object-cover border border-bronze-gold/40 cursor-pointer" onclick="window.openPhotoModal('${log.photo}', '${log.date}')">` : `<div class="w-12 h-12 bg-slate-200 rounded-lg flex items-center justify-center">📷</div>`}
+                        <div>
+                            <div class="text-xs font-bold text-ink-black">${log.date} (${log.duration})</div>
+                            <div class="text-[11px] text-cinnabar">心得: ${log.mood}</div>
+                            ${log.notes ? `<div class="text-[10px] text-ink-light">${log.notes}</div>` : ''}
+                        </div>
+                    </div>
+                    <button class="delete-log-btn text-cinnabar hover:text-cinnabar-dark text-xs px-2 py-1 bg-cinnabar/10 rounded-lg" data-id="${log.id}">
+                        <i class="fa-solid fa-trash"></i> 刪除
+                    </button>
+                `;
+                list.appendChild(item);
+            });
+
+            list.querySelectorAll('.delete-log-btn').forEach(btn => {
+                btn.onclick = (e) => {
+                    const logId = e.currentTarget.getAttribute('data-id');
+                    deleteLogEntry(logId);
+                };
+            });
+        }
+
+        // Upload Photo Handlers
+        const dropzone = document.getElementById('uploadDropzone');
+        const photoInput = document.getElementById('photoInput');
+
+        dropzone.addEventListener('click', (e) => {
+            if (e.target.closest('#removePhotoBtn')) return;
+            photoInput.click();
+        });
+
+        photoInput.addEventListener('change', async (e) => {
+            const file = e.target.files[0];
+            if (file) {
+                try {
+                    currentUploadedBase64 = await compressAndConvertPhoto(file);
+                    document.getElementById('photoPreviewImg').src = currentUploadedBase64;
+                    document.getElementById('uploadPlaceholder').classList.add('hidden');
+                    document.getElementById('photoPreviewContainer').classList.remove('hidden');
+                } catch(err) {
+                    console.error("Photo compress error:", err);
+                }
+            }
+        });
+
+        document.getElementById('removePhotoBtn').addEventListener('click', (e) => {
+            e.stopPropagation();
+            currentUploadedBase64 = null;
+            photoInput.value = '';
+            document.getElementById('uploadPlaceholder').classList.remove('hidden');
+            document.getElementById('photoPreviewContainer').classList.add('hidden');
+        });
+
+        // Pill Selection Handlers
+        document.querySelectorAll('.duration-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                document.querySelectorAll('.duration-btn').forEach(b => b.classList.remove('active', 'bg-bronze-gold/30', 'text-cinnabar'));
+                btn.classList.add('active', 'bg-bronze-gold/30', 'text-cinnabar');
+                selectedDuration = btn.getAttribute('data-value');
+            });
+        });
+
+        document.querySelectorAll('.mood-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                document.querySelectorAll('.mood-btn').forEach(b => b.classList.remove('active', 'bg-cinnabar/20', 'text-cinnabar'));
+                btn.classList.add('active', 'bg-cinnabar/20', 'text-cinnabar');
+                selectedMood = btn.getAttribute('data-value');
+            });
+        });
+
+        // Form Submit
+        document.getElementById('checkInForm').addEventListener('submit', async (e) => {
+            e.preventDefault();
+
+            if (!currentUploadedBase64) {
+                showToast("請拍攝或上傳今日練琴圖卷照片唷！📸");
+                return;
+            }
+
+            const todayStr = getTodayDateString();
+            const notes = document.getElementById('practiceNotes').value.trim();
+
+            const logId = 'log_' + Date.now();
+            const newLog = {
+                id: logId,
+                date: todayStr,
+                timestamp: new Date().toISOString(),
+                duration: selectedDuration,
+                mood: selectedMood,
+                notes: notes,
+                photo: currentUploadedBase64
+            };
+
+            appState.streak += 1;
+            appState.lastCheckInDate = todayStr;
+            appState.logs.unshift(newLog);
+
+            if (db) {
+                await setDoc(getLogsDocRef(logId), newLog);
+                await saveSettingsToFirestore();
+            } else {
+                saveToLocalStorage();
+            }
+
+            updateUI();
+
+            // Check if achieved 5-day multiple
+            if (appState.streak % 5 === 0) {
+                triggerCelebration();
+            } else {
+                showToast("🎉 今日練琴圖卷已成功蓋章呈交！");
+            }
+        });
+
+        const toggleParentBtn = document.getElementById('toggleParentBtn');
+        const pinModal = document.getElementById('pinModal');
+        let isParentMode = false;
+
+        toggleParentBtn.addEventListener('click', () => {
+            if (isParentMode) {
+                exitParentMode();
+            } else {
+                document.getElementById('pinInput').value = '';
+                pinModal.classList.remove('hidden');
+            }
+        });
+
+        document.getElementById('closePinBtn').addEventListener('click', () => {
+            pinModal.classList.add('hidden');
+        });
+
+        document.getElementById('submitPinBtn').addEventListener('click', () => {
+            const pin = document.getElementById('pinInput').value;
+            if (pin === '8888') {
+                pinModal.classList.add('hidden');
+                enterParentMode();
+            } else {
+                showToast("驗證碼不正確，請重新輸入");
+            }
+        });
+
+        function enterParentMode() {
+            isParentMode = true;
+            document.getElementById('kidView').classList.add('hidden');
+            document.getElementById('parentView').classList.remove('hidden');
+            document.getElementById('parentBtnText').innerText = "離開掌案";
+        }
+
+        function exitParentMode() {
+            isParentMode = false;
+            document.getElementById('kidView').classList.remove('hidden');
+            document.getElementById('parentView').classList.add('hidden');
+            document.getElementById('parentBtnText').innerText = "家長掌案";
+        }
+
+        document.getElementById('exitParentBtn').addEventListener('click', exitParentMode);
+
+        // Save Reward Setting
+        document.getElementById('saveRewardBtn').addEventListener('click', async () => {
+            const newReward = document.getElementById('parentRewardInput').value.trim();
+            if (newReward) {
+                appState.rewardText = newReward;
+                if (db) await saveSettingsToFirestore();
+                else saveToLocalStorage();
+                updateUI();
+                showToast("已成功儲存 5 天賞賜錦囊設定！🧧");
+            }
+        });
+
+        // Streak Adjusters
+        document.getElementById('increaseStreakBtn').addEventListener('click', async () => {
+            appState.streak += 1;
+            if (db) await saveSettingsToFirestore();
+            else saveToLocalStorage();
+            updateUI();
+        });
+
+        document.getElementById('decreaseStreakBtn').addEventListener('click', async () => {
+            if (appState.streak > 0) {
+                appState.streak -= 1;
+                if (db) await saveSettingsToFirestore();
+                else saveToLocalStorage();
+                updateUI();
+            }
+        });
+
+        async function deleteLogEntry(id) {
+            appState.logs = appState.logs.filter(l => l.id !== id);
+            if (!db) saveToLocalStorage();
+            updateUI();
+            showToast("已刪除該筆圖卷紀錄");
+        }
+
+        function triggerCelebration() {
+            document.getElementById('celebrationModal').classList.remove('hidden');
+            startFireworks();
+        }
+
+        document.getElementById('closeCelebrationBtn').addEventListener('click', () => {
+            document.getElementById('celebrationModal').classList.add('hidden');
+        });
+
+        function startFireworks() {
+            const canvas = document.getElementById('fireworksCanvas');
+            const ctx = canvas.getContext('2d');
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+
+            const particles = [];
+            const colors = ['#C0392B', '#D4AF37', '#1E5631', '#FFD166', '#E67E22'];
+
+            for (let i = 0; i < 160; i++) {
+                particles.push({
+                    x: canvas.width / 2,
+                    y: canvas.height / 2,
+                    vx: (Math.random() - 0.5) * 14,
+                    vy: (Math.random() - 0.5) * 14,
+                    size: Math.random() * 5 + 2,
+                    color: colors[Math.floor(Math.random() * colors.length)],
+                    alpha: 1,
+                    decay: Math.random() * 0.02 + 0.012
+                });
+            }
+
+            function animate() {
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+                let alive = false;
+
+                particles.forEach(p => {
+                    if (p.alpha > 0) {
+                        alive = true;
+                        p.x += p.vx;
+                        p.y += p.vy;
+                        p.vy += 0.08;
+                        p.alpha -= p.decay;
+
+                        ctx.save();
+                        ctx.globalAlpha = Math.max(0, p.alpha);
+                        ctx.fillStyle = p.color;
+                        ctx.beginPath();
+                        ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
+                        ctx.fill();
+                        ctx.restore();
+                    }
+                });
+
+                if (alive) {
+                    requestAnimationFrame(animate);
+                }
+            }
+            animate();
+        }
+
+        function showPhotoModal(imgSrc, caption) {
+            document.getElementById('fullModalImg').src = imgSrc;
+            document.getElementById('modalPhotoCaption').innerText = caption || '';
+            document.getElementById('photoModal').classList.remove('hidden');
+        }
+        window.openPhotoModal = showPhotoModal;
+
+        document.getElementById('closePhotoModalBtn').addEventListener('click', () => {
+            document.getElementById('photoModal').classList.add('hidden');
+        });
+
+        function getTodayDateString() {
+            const today = new Date();
+            const year = today.getFullYear();
+            const month = String(today.getMonth() + 1).padStart(2, '0');
+            const day = String(today.getDate()).padStart(2, '0');
+            return `${year}-${month}-${day}`;
+        }
+
+        function getTaiwanDayOfWeek() {
+            const days = ['日', '一', '二', '三', '四', '五', '六'];
+            return days[new Date().getDay()];
+        }
+
+        function showToast(msg) {
+            const toast = document.createElement('div');
+            toast.className = "fixed bottom-6 left-1/2 transform -translate-x-1/2 bg-ink-black text-bronze-gold font-bold text-xs px-5 py-3 rounded-xl shadow-2xl z-50 border border-bronze-gold/50 font-serif-tc";
+            toast.innerText = msg;
+            document.body.appendChild(toast);
+            setTimeout(() => toast.remove(), 2500);
+        }
+
+        // Initialize App on Window Load
+        window.onload = function() {
+            initFirebase();
+        };
+    </script>
+</body>
+</html>
